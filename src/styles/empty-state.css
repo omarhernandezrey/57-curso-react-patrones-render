@@ -37,20 +37,64 @@
   max-width: 300px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .empty-state {
-    padding: 40px 16px;
+    padding: 50px 18px;
+  }
+
+  .empty-icon {
+    font-size: 70px;
+    margin-bottom: 20px;
+  }
+
+  .empty-title {
+    font-size: 22px;
+  }
+
+  .empty-message {
+    font-size: 15px;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .empty-state {
+    padding: 45px 16px;
   }
 
   .empty-icon {
     font-size: 60px;
+    margin-bottom: 16px;
   }
 
   .empty-title {
     font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .empty-message {
     font-size: 14px;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empty-state {
+    padding: 40px 14px;
+  }
+
+  .empty-icon {
+    font-size: 50px;
+    margin-bottom: 12px;
+  }
+
+  .empty-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .empty-message {
+    font-size: 12px;
+    max-width: 240px;
   }
 }

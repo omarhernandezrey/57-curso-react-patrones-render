@@ -160,9 +160,46 @@
   transform: scale(1.2);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .reminder-container {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .reminder-btn {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .reminder-picker {
+    padding: 12px;
+    gap: 10px;
+    border-radius: 8px;
+  }
+
+  .reminder-input {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .btn-confirm,
+  .btn-cancel {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 640px) {
+  .reminder-container {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
   .reminder-btn {
     flex-wrap: wrap;
+    padding: 6px 8px;
+    font-size: 11px;
+    border-radius: 5px;
   }
 
   .reminder-btn span {
@@ -170,7 +207,94 @@
     text-align: left;
   }
 
+  .reminder-btn.active span:first-child {
+    flex-basis: auto;
+  }
+
+  .reminder-picker-content {
+    padding: 12px;
+  }
+
+  .reminder-label {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .reminder-input {
+    padding: 6px 8px;
+    font-size: 11px;
+    border-radius: 5px;
+  }
+
   .reminder-picker {
+    padding: 10px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+
+  .reminder-buttons {
+    gap: 6px;
+  }
+
+  .btn-confirm,
+  .btn-cancel {
+    padding: 6px 8px;
+    font-size: 10px;
+    border-radius: 4px;
+  }
+
+  .reminder-remove {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .reminder-container {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  .reminder-btn {
+    padding: 5px 6px;
+    font-size: 10px;
+  }
+
+  .reminder-picker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    border-radius: 12px 12px 0 0;
     gap: 10px;
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+
+  .reminder-picker-content {
+    padding: 10px;
+  }
+
+  .reminder-label {
+    font-size: 10px;
+  }
+
+  .reminder-input {
+    padding: 6px;
+    font-size: 11px;
+    width: 100%;
+  }
+
+  .reminder-buttons {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .btn-confirm,
+  .btn-cancel {
+    flex: 1;
+    padding: 8px 6px;
+    font-size: 10px;
   }
 }

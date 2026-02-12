@@ -222,40 +222,194 @@
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .reminder-alert-modal {
     width: 95%;
-    max-width: 100%;
+    max-width: 500px;
   }
 
   .reminder-alert-header {
-    padding: 16px;
-    flex-wrap: wrap;
+    padding: 20px;
   }
 
   .reminder-alert-icon {
-    font-size: 36px;
+    font-size: 40px;
+    margin-bottom: 12px;
   }
 
   .reminder-alert-header h2 {
-    font-size: 20px;
-  }
-
-  .reminder-alert-content {
-    padding: 16px;
-  }
-
-  .reminder-alert-title {
     font-size: 18px;
   }
 
+  .reminder-alert-close {
+    top: 10px;
+    right: 10px;
+    padding: 6px;
+  }
+
+  .reminder-alert-content {
+    padding: 16px 20px;
+  }
+
+  .reminder-alert-title {
+    font-size: 16px;
+  }
+
+  .reminder-alert-category,
+  .reminder-alert-description {
+    font-size: 13px;
+  }
+
   .reminder-alert-controls {
-    padding: 16px;
+    padding: 16px 20px;
+    gap: 10px;
   }
 
   .sound-toggle,
   .dismiss-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .reminder-alert-modal {
+    width: 90%;
+    max-width: 450px;
+  }
+
+  .reminder-alert-header {
+    padding: 16px 16px 12px;
+  }
+
+  .reminder-alert-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .reminder-alert-header h2 {
+    font-size: 16px;
+  }
+
+  .reminder-alert-close {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+  }
+
+  .reminder-alert-content {
+    padding: 14px 16px;
+  }
+
+  .reminder-alert-title {
     font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .reminder-alert-category {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .reminder-alert-description {
+    font-size: 12px;
+  }
+
+  .reminder-alert-controls {
+    padding: 12px 16px;
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .sound-toggle {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .dismiss-btn {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reminder-alert-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .reminder-alert-modal {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .reminder-alert-header {
+    padding: 14px 14px 10px;
+  }
+
+  .reminder-alert-icon {
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  .reminder-alert-header h2 {
+    font-size: 14px;
+  }
+
+  .reminder-alert-close {
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    font-size: 14px;
+  }
+
+  .reminder-alert-content {
     padding: 12px 14px;
+    max-height: 30vh;
+    overflow-y: auto;
+  }
+
+  .reminder-alert-title {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .reminder-alert-category {
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+
+  .reminder-alert-description {
+    font-size: 11px;
+  }
+
+  .reminder-alert-controls {
+    padding: 10px 14px;
+    gap: 6px;
+    flex-direction: row;
+  }
+
+  .sound-toggle {
+    padding: 6px;
+    font-size: 10px;
+    min-width: 40px;
+  }
+
+  .sound-toggle span {
+    display: none;
+  }
+
+  .dismiss-btn {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 11px;
   }
 }

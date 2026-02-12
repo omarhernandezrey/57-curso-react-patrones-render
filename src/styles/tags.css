@@ -112,3 +112,125 @@
 .btn-add-tag-trigger:hover {
   background-color: rgba(59, 130, 246, 0.1);
 }
+
+/* Responsive - Tablet (768px) */
+@media (max-width: 768px) {
+  .tags-container {
+    gap: 6px;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  .tags-list {
+    gap: 5px;
+  }
+
+  .tag {
+    padding: 3px 6px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .tag-input-group {
+    gap: 3px;
+    min-width: 150px;
+  }
+
+  .tag-input {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+
+  .btn-add-tag,
+  .btn-add-tag-trigger {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+}
+
+/* Responsive - Mobile (640px) */
+@media (max-width: 640px) {
+  .tags-container {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 8px 0;
+  }
+
+  .tags-list {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .tag {
+    padding: 3px 6px;
+    font-size: 10px;
+    gap: 3px;
+  }
+
+  .tag-remove {
+    font-size: 12px;
+  }
+
+  .tag-input-group {
+    width: 100%;
+    gap: 4px;
+    min-width: 100%;
+  }
+
+  .tag-input {
+    padding: 6px;
+    font-size: 11px;
+    border-radius: 4px;
+  }
+
+  .btn-add-tag,
+  .btn-add-tag-trigger {
+    padding: 6px;
+    font-size: 10px;
+    border-radius: 4px;
+  }
+}
+
+/* Responsive - Small Mobile (480px) */
+@media (max-width: 480px) {
+  .tags-container {
+    gap: 6px;
+    margin-top: 8px;
+    padding: 6px 0;
+  }
+
+  .tags-list {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .tag {
+    padding: 2px 4px;
+    font-size: 9px;
+    gap: 2px;
+  }
+
+  .tag-remove {
+    font-size: 10px;
+  }
+
+  .tag-input-group {
+    width: 100%;
+    gap: 3px;
+    flex-direction: column;
+  }
+
+  .tag-input {
+    width: 100%;
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  .btn-add-tag,
+  .btn-add-tag-trigger {
+    width: 100%;
+    padding: 6px;
+    font-size: 10px;
+  }
+}
