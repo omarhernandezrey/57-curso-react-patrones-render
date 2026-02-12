@@ -1,71 +1,284 @@
-# Getting Started with Create React App
+# 📋 Gestor de Tareas Profesional - TODO App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación moderna y completa de gestión de tareas construida con React 18, diseñada con patrones profesionales, animaciones suaves y todas las funcionalidades que necesitas para organizar tu trabajo.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react)
+![Zustand](https://img.shields.io/badge/Zustand-4.4.6-302D2D?style=for-the-badge)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.16.16-000?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+## 🌟 Características Principales
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### ✅ Gestión de Tareas
+- **CRUD Completo**: Crear, leer, actualizar y eliminar tareas
+- **Estados de Tarea**: Completadas, activas, atrasadas
+- **Prioridades**: Alta, Media, Baja con indicadores visuales
+- **Fechas de Vencimiento**: Con alertas para tareas atrasadas
+- **Categorías**: Organiza tus tareas por categoría personalizada
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 🔔 Sistema Avanzado de Recordatorios
+- **Recordatorios con Fecha/Hora**: Establece recordatorios precisos
+- **Alerta Modal Profesional**: Interfaz visual impactante cuando llega el recordatorio
+- **Sonido Persistente**: Web Audio API con sonido de alerta cada 3 segundos
+- **Control de Sonido**: Toggle para silenciar sin cerrar la alerta
+- **Auto-Descarte**: Permanece visible hasta que el usuario lo acepte
 
-### `yarn test`
+### 📊 Dashboard de Estadísticas
+- **Estadísticas Generales**: Total, completadas, activas, atrasadas
+- **Distribución por Prioridad**: Gráfico de barras con desglose
+- **Progreso de Subtareas**: Visualización circular de progreso
+- **Tiempo Total Pomodoro**: Acumulado de sesiones completadas
+- **Datos en Tiempo Real**: Actualizaciones instantáneas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🏷️ Sistema de Etiquetas
+- **Etiquetas Múltiples**: Asigna múltiples etiquetas por tarea
+- **Códigos de Color**: 8 colores diferentes para categorizar
+- **Gestión Rápida**: Agregar/eliminar etiquetas sin recargar
 
-### `yarn build`
+### ✏️ Notas y Descripciones
+- **Texto Enriquecido**: Agregar descripciones largas a tareas
+- **Edición Rápida**: Toggle entre vista y edición
+- **Persistencia**: Guarda automáticamente en localStorage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📝 Sistema de Subtareas
+- **Subtareas Anidadas**: Crea subtareas dentro de tareas
+- **Progreso Visual**: Barra de progreso por tarea
+- **Marcar Completadas**: Cada subtarea se puede marcar individual
+- **Contador Automático**: Muestra progreso (2/5 completadas)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ⏲️ Pomodoro Timer
+- **Sesiones de 25 Minutos**: Timer estándar de Pomodoro
+- **Pausa y Reanuda**: Controla el flujo de trabajo
+- **Reiniciar**: Comienza una nueva sesión
+- **Contadores**: Número de sesiones y tiempo total
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔍 Filtrado y Búsqueda
+- **Filtros por Estado**: Todas, Activas, Completadas
+- **Filtro por Categoría**: Búsqueda rápida de categorías
+- **Ordenamiento**: Por fecha, prioridad, alfabético
 
-### `yarn eject`
+### 🎨 Tema y Personalización
+- **Modo Oscuro/Claro**: Toggle automático con persistencia
+- **Sistema de Colores**: Paleta profesional con CSS variables
+- **Responsive Design**: Funciona perfecto en móvil, tablet y desktop
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### ⚠️ Alertas Profesionales
+- **Diálogos de Confirmación**: Modal para acciones destructivas
+- **Gradientes Animados**: Diseño visual profesional
+- **Backdrop Blur**: Efecto overlay moderno
+- **Animaciones**: Slide-up y bounce effects
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 💾 Persistencia
+- **localStorage Automático**: Guarda todos los datos automáticamente
+- **Sincronización**: Actualizaciones en tiempo real
+- **Exportación e Importación**: JSON support
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🛠️ Tech Stack
 
-## Learn More
+### Frontend
+- **React 18.2.0** - UI Library
+- **React DOM 18.2.0** - Browser rendering
+- **Zustand 4.4.6** - State management
+- **Framer Motion 10.16.16** - Animations
+- **React Icons 4.12.0** - Icons
+- **React Hot Toast 2.4.1** - Notifications
+- **dayjs 1.11.10** - Date manipulation
+- **Web Audio API** - Sound generation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 Instalación
 
-### Code Splitting
+### Prerrequisitos
+- Node.js v16+ y npm v7+
+- Git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Pasos
 
-### Analyzing the Bundle Size
+```bash
+# Clonar
+git clone https://github.com/omarhernandezrey/57-curso-react-patrones-render.git
+cd 57-curso-react-patrones-render
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Instalar
+npm install
 
-### Making a Progressive Web App
+# Iniciar
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Build
+npm run build
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🚀 Uso Rápido
 
-### Deployment
+### Crear Tarea
+1. Escribe título en el formulario
+2. Selecciona categoría, prioridad, fecha (opcional)
+3. Presiona Enter
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Recordatorio
+1. Expande tarea (▼)
+2. Selecciona "🔔 Recordatorio"
+3. Establece fecha/hora
+4. Presiona "✓ Establecer"
 
-### `yarn build` fails to minify
+### Subtareas
+1. Expande tarea
+2. Ve a "📋 Subtareas"
+3. Agrega nueva subtarea
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# 57-curso-react-patrones-render
+### Pomodoro
+1. Expande tarea
+2. Ve a "⏲️ Pomodoro"
+3. Presiona "Iniciar"
+
+### Estadísticas
+- Haz clic en "📊 Estadísticas"
+
+---
+
+## 📁 Estructura
+
+```
+src/
+├── AppModern/
+│   ├── index.js (App)
+│   ├── Header.js
+│   ├── Sidebar.js
+│   ├── TodoContainer.js
+│   ├── AddTodoForm.js
+│   ├── TodoItem.js
+│   ├── Dashboard.js
+│   ├── Subtasks.js
+│   ├── Tags.js
+│   ├── Notes.js
+│   ├── Reminder.js
+│   ├── ReminderAlert.js
+│   ├── PomodoroTimer.js
+│   ├── ConfirmDialog.js
+│   └── EmptyState.js
+├── styles/
+│   └── [Archivos CSS modulares]
+├── store.js (Zustand)
+├── constants.js
+└── index.js
+```
+
+---
+
+## 🧠 State Management
+
+Zustand store con persistencia automática en localStorage:
+
+```javascript
+// Métodos principales
+addTodo(title, category, priority, dueDate)
+toggleComplete(id)
+deleteTodo(id)
+updateTodo(id, updates)
+getFilteredTodos()
+getStats()
+getAdvancedStats()
+
+// Subtareas
+addSubtask(todoId, title)
+toggleSubtask(todoId, subtaskId)
+deleteSubtask(todoId, subtaskId)
+
+// Etiquetas
+addTag(todoId, tagName)
+removeTag(todoId, tagName)
+
+// Recordatorios
+setReminder(todoId, reminderDate)
+addActiveReminder(todoId)
+removeActiveReminder(todoId)
+```
+
+---
+
+## 🎨 Temas
+
+CSS variables para tema dinámico:
+- `--bg-primary`, `--bg-secondary`: Fondos
+- `--text-primary`, `--text-secondary`: Textos
+- `--accent-blue`, `--accent-red`, `--accent-green`: Acentos
+- `--border-color`: Bordes
+
+---
+
+## 🔊 Sonido
+
+Web Audio API sin archivos externos:
+- Dos tonos: 880Hz y 1000Hz
+- Repite cada 3 segundos
+- Silenciable sin cerrar alerta
+
+Compatibilidad:
+- ✅ Chrome, Firefox, Safari, Edge
+- ❌ IE
+
+---
+
+## 🐛 Troubleshooting
+
+**Sonido no funciona**
+- Verifica que no esté silenciado el navegador
+- Algunos navegadores requieren interacción del usuario primero
+
+**Tareas no se guardan**
+- Verifica localStorage en DevTools
+- Limpia cache del navegador
+
+**Animaciones lentas**
+- Desactiva otros programas
+- Intenta otro navegador
+
+---
+
+## 📚 Recursos
+
+- [React Documentation](https://react.dev)
+- [Zustand GitHub](https://github.com/pmndrs/zustand)
+- [Framer Motion](https://www.framer.com/motion/)
+- [dayjs](https://day.js.org/)
+
+---
+
+## 🤝 Contribuciones
+
+1. Fork el repositorio
+2. Crea rama feature (`git checkout -b feature/NuevaFuncion`)
+3. Commit (`git commit -m 'Add NuevaFuncion'`)
+4. Push (`git push origin feature/NuevaFuncion`)
+5. Pull Request
+
+---
+
+## 📄 Licencia
+
+MIT License
+
+---
+
+## 👤 Autor
+
+**Omar Hernández**
+- GitHub: [@omarhernandezrey](https://github.com/omarhernandezrey)
+
+---
+
+<div align="center">
+
+**Hecho con ❤️ por Omar Hernández**
+
+¡Dale una ⭐ en GitHub si te gusta!
+
+</div>
