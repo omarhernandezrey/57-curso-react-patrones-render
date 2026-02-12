@@ -1,74 +1,100 @@
-/* Notes Styles */
+/* ============================================================ */
+/* NOTES - RESPONSIVE Y READABLE */
+/* ============================================================ */
 
 .notes-container {
-  margin-top: 16px;
+  margin-top: 12px;
   padding: 12px 0;
   border-top: 1px solid var(--border-color);
+  width: 100%;
 }
 
 .notes-edit {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 .notes-textarea {
   width: 100%;
-  min-height: 80px;
-  padding: 10px 12px;
+  min-height: 100px;
+  padding: 11px 12px;
   border: 1px solid var(--border-color);
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   border-radius: 6px;
   font-size: 13px;
   font-family: inherit;
+  line-height: 1.4;
   resize: vertical;
-}
-
-.notes-textarea:focus {
-  outline: none;
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  transition: all 0.2s ease;
 }
 
 .notes-textarea::placeholder {
   color: var(--text-tertiary);
 }
 
-.notes-buttons {
-  display: flex;
-  gap: 8px;
+.notes-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.btn-save {
-  flex: 1;
-  padding: 8px 12px;
-  background-color: var(--success);
-  color: white;
-  border: none;
-  border-radius: 4px;
+.notes-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-save,
+.btn-cancel {
+  padding: 11px 12px;
+  border-radius: 6px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   transition: all 0.2s ease;
+  min-height: 40px;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
 }
 
-.btn-save:hover {
-  opacity: 0.9;
+.btn-save {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+}
+
+.btn-save:active {
+  transform: scale(0.98);
+}
+
+.btn-cancel {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-cancel:active {
+  background-color: var(--border-color);
 }
 
 .notes-view {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 .notes-text {
-  padding: 10px 12px;
+  padding: 11px 12px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 6px;
@@ -77,119 +103,104 @@
   line-height: 1.5;
   word-wrap: break-word;
   white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 60px;
 }
 
 .btn-edit-note,
 .btn-add-note {
-  padding: 8px 12px;
+  width: 100%;
+  padding: 11px 12px;
   background-color: transparent;
-  color: var(--accent-blue);
-  border: 1px dashed var(--accent-blue);
-  border-radius: 4px;
+  color: var(--primary-color);
+  border: 2px dashed var(--primary-color);
+  border-radius: 6px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  gap: 6px;
   transition: all 0.2s ease;
+  min-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
 }
 
-/* Responsive - Tablet (768px) */
-@media (max-width: 768px) {
+.btn-edit-note:active,
+.btn-add-note:active {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* ==================== TABLET (768px) ==================== */
+@media (min-width: 768px) {
   .notes-container {
     margin-top: 14px;
-    padding: 10px 0;
+    padding: 14px 0;
   }
 
   .notes-textarea {
-    min-height: 70px;
-    padding: 9px 10px;
-    font-size: 12px;
+    min-height: 110px;
+    padding: 12px 14px;
+    font-size: 14px;
   }
 
   .notes-text {
-    padding: 9px 10px;
-    font-size: 12px;
-  }
-
-  .btn-save,
-  .btn-edit-note,
-  .btn-add-note {
-    padding: 6px 10px;
-    font-size: 11px;
+    padding: 12px 14px;
+    font-size: 14px;
   }
 
   .notes-buttons {
-    gap: 6px;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    flex: 1;
+    padding: 12px 14px;
+    font-size: 13px;
+    min-height: 42px;
+  }
+
+  .btn-edit-note,
+  .btn-add-note {
+    padding: 12px 14px;
+    font-size: 13px;
+    min-height: 42px;
   }
 }
 
-/* Responsive - Mobile (640px) */
-@media (max-width: 640px) {
+/* ==================== DESKTOP (1024px) ==================== */
+@media (min-width: 1024px) {
   .notes-container {
-    margin-top: 12px;
-    padding: 8px 0;
+    margin-top: 16px;
+    padding: 16px 0;
   }
 
   .notes-textarea {
-    min-height: 60px;
-    padding: 8px 9px;
-    font-size: 12px;
-    border-radius: 5px;
+    min-height: 120px;
+    padding: 13px 16px;
+    font-size: 15px;
   }
 
   .notes-text {
-    padding: 8px 9px;
-    font-size: 12px;
-    border-radius: 5px;
+    padding: 13px 16px;
+    font-size: 15px;
   }
 
   .btn-save,
+  .btn-cancel {
+    padding: 13px 18px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
   .btn-edit-note,
   .btn-add-note {
-    padding: 6px 9px;
-    font-size: 10px;
-    border-radius: 4px;
-  }
-
-  .notes-buttons {
-    gap: 5px;
-  }
-}
-
-/* Responsive - Small Mobile (480px) */
-@media (max-width: 480px) {
-  .notes-container {
-    margin-top: 10px;
-    padding: 6px 0;
-  }
-
-  .notes-textarea {
-    min-height: 50px;
-    padding: 6px 8px;
-    font-size: 11px;
-  }
-
-  .notes-text {
-    padding: 6px 8px;
-    font-size: 11px;
-  }
-
-  .btn-save,
-  .btn-edit-note,
-  .btn-add-note {
-    padding: 5px 8px;
-    font-size: 9px;
-    gap: 3px;
-  }
-
-  .notes-buttons {
-    gap: 4px;
-    flex-direction: column;
-  }
-
-  .btn-save {
-    width: 100%;
+    padding: 13px 18px;
+    font-size: 14px;
+    min-height: 44px;
   }
 }
