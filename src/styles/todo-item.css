@@ -1,4 +1,4 @@
-/* Item de Tarea - Mobile First Professional Grid Layout */
+/* Item de Tarea - Mobile First Professional Design */
 
 .todo-item {
   background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(59, 130, 246, 0.01) 100%);
@@ -6,11 +6,12 @@
   border-radius: 12px;
   padding: 12px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  gap: 10px;
   align-items: flex-start;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  min-height: 140px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .todo-item:focus-within {
