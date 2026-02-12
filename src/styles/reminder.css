@@ -1,7 +1,10 @@
-/* Reminder Styles */
+/* ============================================================ */
+/* REMINDER - RESPONSIVE Y ACCESSIBLE */
+/* ============================================================ */
 
 .reminder-container {
   margin-top: 12px;
+  width: 100%;
 }
 
 .reminder-picker {
@@ -11,65 +14,81 @@
   padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  width: 100%;
 }
 
 .reminder-picker-content {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .reminder-label {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  line-height: 1;
 }
 
 .reminder-input {
-  padding: 10px 12px;
+  padding: 11px 12px;
   border: 1px solid var(--border-color);
   background-color: var(--bg-primary);
   color: var(--text-primary);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 13px;
   font-family: inherit;
+  min-height: 40px;
+  transition: all 0.2s ease;
+}
+
+.reminder-input::placeholder {
+  color: var(--text-tertiary);
 }
 
 .reminder-input:focus {
   outline: none;
-  border-color: var(--accent-blue);
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .reminder-buttons {
   display: flex;
+  flex-direction: column;
   gap: 8px;
+  width: 100%;
 }
 
-.btn-confirm {
-  flex: 1;
-  padding: 10px 12px;
-  background-color: var(--success);
-  color: white;
-  border: none;
+.btn-confirm,
+.btn-cancel {
+  padding: 11px 12px;
   border-radius: 6px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   transition: all 0.2s ease;
+  min-height: 40px;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
 }
 
-.btn-confirm:hover:not(:disabled) {
-  opacity: 0.9;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+.btn-confirm {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+}
+
+.btn-confirm:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
 }
 
 .btn-confirm:disabled {
@@ -78,223 +97,137 @@
 }
 
 .btn-cancel {
-  flex: 1;
-  padding: 10px 12px;
-  background-color: transparent;
+  background-color: var(--bg-secondary);
   color: var(--text-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  transition: all 0.2s ease;
 }
 
-.btn-cancel:hover {
-  background-color: var(--bg-secondary);
-  border-color: var(--text-secondary);
+.btn-cancel:active {
+  background-color: var(--border-color);
 }
 
 .reminder-btn {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
   padding: 10px 12px;
-  background-color: transparent;
+  background-color: var(--bg-secondary);
   color: var(--text-secondary);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  position: relative;
-  max-width: 100%;
+  width: 100%;
+  min-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
 }
 
-.reminder-btn:hover {
-  background-color: var(--bg-secondary);
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
-}
-
+.reminder-btn:active,
 .reminder-btn.active {
   background-color: rgba(59, 130, 246, 0.1);
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
-  font-weight: 600;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .reminder-btn span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  flex: 1;
-}
-
-.reminder-btn span:last-child {
-  flex: 1;
-  text-align: left;
 }
 
 .reminder-remove {
   background: none;
   border: none;
-  color: var(--danger);
+  color: #dc2626;
   cursor: pointer;
-  padding: 2px 4px;
+  padding: 4px 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.7;
   transition: all 0.2s ease;
   flex-shrink: 0;
+  font-size: 14px;
 }
 
-.reminder-remove:hover {
+.reminder-remove:active {
   opacity: 1;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-  .reminder-container {
-    margin-top: 12px;
-    padding-top: 12px;
-  }
-
-  .reminder-btn {
-    padding: 7px 10px;
-    font-size: 12px;
-  }
-
+/* ==================== TABLET (768px) ==================== */
+@media (min-width: 768px) {
   .reminder-picker {
-    padding: 12px;
-    gap: 10px;
-    border-radius: 8px;
-  }
-
-  .reminder-input {
-    padding: 7px 9px;
-    font-size: 12px;
-  }
-
-  .btn-confirm,
-  .btn-cancel {
-    padding: 6px 10px;
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 640px) {
-  .reminder-container {
-    margin-top: 10px;
-    padding-top: 10px;
-  }
-
-  .reminder-btn {
-    flex-wrap: wrap;
-    padding: 6px 8px;
-    font-size: 11px;
-    border-radius: 5px;
-  }
-
-  .reminder-btn span {
-    flex-basis: 100%;
-    text-align: left;
-  }
-
-  .reminder-btn.active span:first-child {
-    flex-basis: auto;
-  }
-
-  .reminder-picker-content {
-    padding: 12px;
+    padding: 14px;
+    gap: 12px;
   }
 
   .reminder-label {
-    font-size: 11px;
-    margin-bottom: 6px;
+    font-size: 12px;
   }
 
   .reminder-input {
-    padding: 6px 8px;
-    font-size: 11px;
-    border-radius: 5px;
-  }
-
-  .reminder-picker {
-    padding: 10px;
-    gap: 8px;
-    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 14px;
+    min-height: 42px;
   }
 
   .reminder-buttons {
-    gap: 6px;
-  }
-
-  .btn-confirm,
-  .btn-cancel {
-    padding: 6px 8px;
-    font-size: 10px;
-    border-radius: 4px;
-  }
-
-  .reminder-remove {
-    opacity: 0.8;
-  }
-}
-
-@media (max-width: 480px) {
-  .reminder-container {
-    margin-top: 8px;
-    padding-top: 8px;
-  }
-
-  .reminder-btn {
-    padding: 5px 6px;
-    font-size: 10px;
-  }
-
-  .reminder-picker {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 12px;
-    border-radius: 12px 12px 0 0;
+    flex-direction: row;
     gap: 10px;
-    max-height: 40vh;
-    overflow-y: auto;
-  }
-
-  .reminder-picker-content {
-    padding: 10px;
-  }
-
-  .reminder-label {
-    font-size: 10px;
-  }
-
-  .reminder-input {
-    padding: 6px;
-    font-size: 11px;
-    width: 100%;
-  }
-
-  .reminder-buttons {
-    display: flex;
-    gap: 6px;
-    width: 100%;
   }
 
   .btn-confirm,
   .btn-cancel {
     flex: 1;
-    padding: 8px 6px;
-    font-size: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+    min-height: 42px;
+  }
+
+  .reminder-btn {
+    padding: 11px 14px;
+    font-size: 13px;
+    min-height: 42px;
+  }
+}
+
+/* ==================== DESKTOP (1024px) ==================== */
+@media (min-width: 1024px) {
+  .reminder-picker {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .reminder-label {
+    font-size: 13px;
+  }
+
+  .reminder-input {
+    padding: 13px 16px;
+    font-size: 15px;
+    min-height: 44px;
+  }
+
+  .btn-confirm,
+  .btn-cancel {
+    padding: 13px 18px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
+  .reminder-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+    min-height: 44px;
   }
 }
