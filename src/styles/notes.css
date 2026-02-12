@@ -1,0 +1,101 @@
+/* Notes Styles */
+
+.notes-container {
+  margin-top: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.notes-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notes-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.notes-textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.notes-textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.notes-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-save {
+  flex: 1;
+  padding: 8px 12px;
+  background-color: var(--success);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-save:hover {
+  opacity: 0.9;
+}
+
+.notes-view {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notes-text {
+  padding: 10px 12px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.btn-edit-note,
+.btn-add-note {
+  padding: 8px 12px;
+  background-color: transparent;
+  color: var(--accent-blue);
+  border: 1px dashed var(--accent-blue);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-edit-note:hover,
+.btn-add-note:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
