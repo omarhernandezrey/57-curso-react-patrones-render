@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FiSettings, FiTrash2, FiDownload, FiUpload } from 'react-icons/fi';
 import { useTodoStore } from '../store';
 import { FILTERS, SORT_OPTIONS, CATEGORIES } from '../constants';
 import { ConfirmDialog } from './ConfirmDialog';
@@ -123,7 +122,7 @@ export function Sidebar() {
             onClick={handleExport}
             title="Descargar tareas"
           >
-            <FiDownload size={16} />
+            <span className="material-symbols-rounded">download</span>
             <span>Exportar</span>
           </button>
           <button
@@ -131,7 +130,7 @@ export function Sidebar() {
             onClick={handleClearCompleted}
             title="Eliminar completadas"
           >
-            <FiTrash2 size={16} />
+            <span className="material-symbols-rounded">delete_outline</span>
             <span>Limpiar</span>
           </button>
           <button
@@ -139,7 +138,7 @@ export function Sidebar() {
             onClick={handleDeleteAll}
             title="Eliminar todo"
           >
-            <FiSettings size={16} />
+            <span className="material-symbols-rounded">settings</span>
             <span>Borrar todo</span>
           </button>
         </div>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FiX, FiPlus } from 'react-icons/fi';
 import { useTodoStore } from '../store';
 import '../styles/tags.css';
 
@@ -43,7 +42,7 @@ export function Tags({ todoId, tags = [] }) {
               className="tag-remove"
               onClick={() => removeTag(todoId, tag)}
             >
-              <FiX size={12} />
+              <span className="material-symbols-rounded">close</span>
             </button>
           </span>
         ))}
@@ -69,7 +68,7 @@ export function Tags({ todoId, tags = [] }) {
           className="btn-add-tag-trigger"
           onClick={() => setIsAdding(true)}
         >
-          <FiPlus size={12} /> Etiqueta
+          <span className="material-symbols-rounded">add</span> Etiqueta
         </button>
       )}
     </div>

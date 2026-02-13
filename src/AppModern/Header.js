@@ -1,5 +1,4 @@
 import React from 'react';
-import { FiMoon, FiSun, FiPlus } from 'react-icons/fi';
 import { useTodoStore } from '../store';
 import '../styles/header.css';
 
@@ -43,9 +42,9 @@ export function Header({ onThemeChange }) {
           aria-label="Cambiar tema"
         >
           {theme === 'light' ? (
-            <FiMoon size={20} />
+            <span className="material-symbols-rounded">dark_mode</span>
           ) : (
-            <FiSun size={20} />
+            <span className="material-symbols-rounded">light_mode</span>
           )}
         </button>
       </div>

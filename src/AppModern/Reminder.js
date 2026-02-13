@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FiBell, FiX } from 'react-icons/fi';
 import { useTodoStore } from '../store';
 import toast from 'react-hot-toast';
 import '../styles/reminder.css';
@@ -154,7 +153,7 @@ export function Reminder({ todoId, title, reminder }) {
           onClick={() => setShowPicker(true)}
           title={reminder ? `Recordatorio: ${displayTime}` : 'Establecer recordatorio'}
         >
-          <FiBell size={14} />
+          <span className="material-symbols-rounded">notifications</span>
           {reminder ? (
             <>
               <span>{displayTime}</span>
@@ -166,7 +165,7 @@ export function Reminder({ todoId, title, reminder }) {
                 }}
                 title="Eliminar recordatorio"
               >
-                <FiX size={12} />
+                <span className="material-symbols-rounded">close</span>
               </button>
             </>
           ) : (

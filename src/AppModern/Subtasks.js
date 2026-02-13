@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FiPlus, FiX } from 'react-icons/fi';
 import { useTodoStore } from '../store';
 import '../styles/subtasks.css';
 
@@ -49,7 +48,7 @@ export function Subtasks({ todoId, subtasks }) {
               className="subtask-delete"
               onClick={() => deleteSubtask(todoId, subtask.id)}
             >
-              <FiX size={14} />
+              <span className="material-symbols-rounded">close</span>
             </button>
           </div>
         ))}
@@ -81,7 +80,7 @@ export function Subtasks({ todoId, subtasks }) {
         </div>
       ) : (
         <button className="btn-add-subtask" onClick={() => setIsAdding(true)}>
-          <FiPlus size={14} /> Añadir subtarea
+          <span className="material-symbols-rounded">add</span> Añadir subtarea
         </button>
       )}
     </div>

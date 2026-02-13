@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FiPlay, FiPause, FiRotateCcw } from 'react-icons/fi';
 import { useTodoStore } from '../store';
 import toast from 'react-hot-toast';
 import '../styles/pomodoro.css';
@@ -59,11 +58,11 @@ export function PomodoroTimer({ todoId, initialTime = 0 }) {
           className={`btn-control ${isRunning ? 'running' : ''}`}
           onClick={handleToggle}
         >
-          {isRunning ? <FiPause size={16} /> : <FiPlay size={16} />}
+          {isRunning ? <span className="material-symbols-rounded">pause</span> : <span className="material-symbols-rounded">play_arrow</span>}
           {isRunning ? 'Pausar' : 'Iniciar'}
         </button>
         <button className="btn-control" onClick={handleReset}>
-          <FiRotateCcw size={16} /> Reiniciar
+          <span className="material-symbols-rounded">refresh</span> Reiniciar
         </button>
       </div>
     </div>

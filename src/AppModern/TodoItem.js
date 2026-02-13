@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FiX, FiEdit2, FiCheckCircle, FiCircle, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -67,7 +66,11 @@ export function TodoItem({ todo }) {
             toast.success(todo.completed ? 'Marcado como incompleto' : 'Marcado como completado');
           }}
         >
-          {todo.completed ? <FiCheckCircle size={22} /> : <FiCircle size={22} />}
+          {todo.completed ? (
+            <span className="material-symbols-rounded">check_circle</span>
+          ) : (
+            <span className="material-symbols-rounded">radio_button_unchecked</span>
+          )}
         </button>
       </div>
 
@@ -98,7 +101,11 @@ export function TodoItem({ todo }) {
                 className="expand-btn"
                 onClick={() => setIsExpanded(!isExpanded)}
               >
-                {isExpanded ? <FiChevronUp size={18} /> : <FiChevronDown size={18} />}
+                {isExpanded ? (
+                  <span className="material-symbols-rounded">expand_less</span>
+                ) : (
+                  <span className="material-symbols-rounded">expand_more</span>
+                )}
               </button>
             </div>
             
@@ -159,14 +166,14 @@ export function TodoItem({ todo }) {
           onClick={() => setIsEditing(!isEditing)}
           title="Editar"
         >
-          <FiEdit2 size={18} />
+          <span className="material-symbols-rounded">edit</span>
         </button>
         <button
           className="action-btn delete-btn"
           onClick={handleDelete}
           title="Eliminar"
         >
-          <FiX size={18} />
+          <span className="material-symbols-rounded">close</span>
         </button>
       </div>
 

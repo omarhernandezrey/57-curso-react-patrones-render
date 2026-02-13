@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FiPlus } from 'react-icons/fi';
 import { useTodoStore } from '../store';
 import { CATEGORIES, PRIORITIES } from '../constants';
 import toast from 'react-hot-toast';
@@ -37,7 +36,7 @@ export function AddTodoForm() {
           className="add-todo-button"
           onClick={() => setIsOpen(true)}
         >
-          <FiPlus size={20} />
+          <span className="material-symbols-rounded">add</span>
           <span>Añadir nueva tarea</span>
         </button>
       ) : (

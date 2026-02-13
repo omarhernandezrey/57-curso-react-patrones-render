@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FiX, FiVolume2, FiVolumeX } from 'react-icons/fi';
 import '../styles/reminder-alert.css';
 
 export function ReminderAlert({ todo, onDismiss }) {
@@ -85,7 +84,7 @@ export function ReminderAlert({ todo, onDismiss }) {
             onClick={handleDismiss}
             title="Descartar recordatorio"
           >
-            <FiX size={24} />
+            <span className="material-symbols-rounded">close</span>
           </button>
         </div>
 
@@ -109,12 +108,12 @@ export function ReminderAlert({ todo, onDismiss }) {
           >
             {isSoundOn ? (
               <>
-                <FiVolume2 size={20} />
+                <span className="material-symbols-rounded">volume_normal</span>
                 <span>Sonido Activado</span>
               </>
             ) : (
               <>
-                <FiVolumeX size={20} />
+                <span className="material-symbols-rounded">volume_off</span>
                 <span>Sonido Silenciado</span>
               </>
             )}

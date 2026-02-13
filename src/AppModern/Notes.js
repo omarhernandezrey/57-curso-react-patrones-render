@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FiEdit2, FiSave, FiX } from 'react-icons/fi';
 import { useTodoStore } from '../store';
 import '../styles/notes.css';
 
@@ -31,10 +30,10 @@ export function Notes({ todoId, description }) {
           />
           <div className="notes-buttons">
             <button className="btn-save" onClick={handleSave}>
-              <FiSave size={14} /> Guardar
+              <span className="material-symbols-rounded">save</span> Guardar
             </button>
             <button className="btn-cancel" onClick={handleCancel}>
-              <FiX size={14} /> Cancelar
+              <span className="material-symbols-rounded">close</span> Cancelar
             </button>
           </div>
         </div>
@@ -47,7 +46,7 @@ export function Notes({ todoId, description }) {
                 className="btn-edit-note"
                 onClick={() => setIsEditing(true)}
               >
-                <FiEdit2 size={14} /> Editar nota
+                <span className="material-symbols-rounded">edit</span> Editar nota
               </button>
             </>
           ) : (
@@ -55,7 +54,7 @@ export function Notes({ todoId, description }) {
               className="btn-add-note"
               onClick={() => setIsEditing(true)}
             >
-              <FiEdit2 size={14} /> Añadir nota
+              <span className="material-symbols-rounded">edit</span> Añadir nota
             </button>
           )}
         </div>
