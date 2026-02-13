@@ -1,5 +1,5 @@
 /* ============================================================ */
-/* CONTENEDOR DE TAREAS - RESPONSIVE */
+/* CONTENEDOR DE TAREAS - MINIMALISTA */
 /* ============================================================ */
 
 .todo-list {
@@ -32,13 +32,13 @@
 }
 
 .toggle-btn {
-  padding: 11px 14px;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
+  padding: 10px 14px;
+  background-color: var(--card-light);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary-light);
   border-radius: 6px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -48,20 +48,22 @@
   text-transform: uppercase;
   letter-spacing: 0.2px;
   min-height: 40px;
-  flex-shrink: 0;
+}
+
+.dark .toggle-btn {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
 }
 
 .toggle-btn:active {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--primary);
+  border-color: var(--primary);
   color: white;
 }
 
-.toggle-btn.active {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
-  color: white;
-  border: none;
-  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+.toggle-btn-icon {
+  font-size: 12px;
 }
 
 /* ==================== TABLET (768px) ==================== */
@@ -70,14 +72,14 @@
     gap: 12px;
   }
 
-  .dashboard-toggle {
-    margin-bottom: 14px;
-  }
-
   .toggle-btn {
-    padding: 12px 16px;
+    padding: 11px 16px;
     font-size: 13px;
     min-height: 42px;
+  }
+
+  .dashboard-toggle {
+    margin-bottom: 16px;
   }
 }
 
@@ -87,13 +89,24 @@
     gap: 14px;
   }
 
+  .toggle-btn {
+    padding: 12px 18px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
   .dashboard-toggle {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .todo-item {
+    animation: none;
   }
 
   .toggle-btn {
-    padding: 13px 18px;
-    font-size: 14px;
-    min-height: 44px;
+    transition: none;
   }
 }

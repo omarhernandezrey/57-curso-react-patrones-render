@@ -1,12 +1,16 @@
 /* ============================================================ */
-/* SUBTASKS - RESPONSIVE Y INTERACTIVE */
+/* SUBTASKS - MINIMALISTA */
 /* ============================================================ */
 
 .subtasks-container {
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-light);
   width: 100%;
+}
+
+.dark .subtasks-container {
+  border-top-color: var(--border-dark);
 }
 
 .subtasks-header {
@@ -18,12 +22,16 @@
 }
 
 .subtasks-title {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-primary-light);
   text-transform: uppercase;
   letter-spacing: 0.2px;
   line-height: 1;
+}
+
+.dark .subtasks-title {
+  color: var(--text-primary-dark);
 }
 
 .subtasks-progress {
@@ -33,15 +41,19 @@
 
 .progress-bar {
   height: 4px;
-  background-color: var(--bg-secondary);
+  background-color: var(--border-light);
   border-radius: 2px;
   overflow: hidden;
-  border: 1px solid var(--border-color);
+  border: none;
+}
+
+.dark .progress-bar {
+  background-color: var(--border-dark);
 }
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--primary-color), #2563eb);
+  background-color: var(--primary);
   transition: width 0.3s ease;
   border-radius: 2px;
 }
@@ -49,8 +61,7 @@
 .subtasks-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 6px;
   width: 100%;
 }
 
@@ -59,112 +70,75 @@
   align-items: center;
   gap: 8px;
   padding: 10px 12px;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-light);
+  background-color: var(--card-light);
   border-radius: 6px;
   transition: all 0.2s ease;
   min-height: 40px;
 }
 
-.subtask-item:active {
-  background-color: var(--bg-primary);
-  border-color: var(--primary-color);
-}
-
-.subtask-item.completed {
-  opacity: 0.7;
+.dark .subtask-item {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
 }
 
 .subtask-checkbox {
-  width: 22px;
-  min-width: 22px;
-  height: 22px;
-  min-height: 22px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  transition: all 0.2s ease;
-  color: var(--text-secondary);
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-}
-
-.subtask-checkbox:active {
-  border-color: var(--primary-color);
-}
-
-.subtask-item.completed .subtask-checkbox {
-  background: linear-gradient(135deg, #10b981, #059669);
-  border-color: #10b981;
-  color: white;
+  cursor: pointer;
+  accent-color: var(--primary);
 }
 
 .subtask-text {
-  flex: 1;
   font-size: 12px;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.3;
+  color: var(--text-primary-light);
+  flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  white-space: nowrap;
+}
+
+.dark .subtask-text {
+  color: var(--text-primary-dark);
 }
 
 .subtask-item.completed .subtask-text {
   text-decoration: line-through;
-  color: var(--text-tertiary);
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
-.subtask-delete {
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  min-height: 32px;
-  background: none;
+.subtask-remove-btn {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background-color: transparent;
   border: none;
-  color: var(--text-secondary);
+  color: var(--text-secondary-light);
   cursor: pointer;
-  opacity: 0.8;
+  font-size: 14px;
   transition: all 0.2s ease;
-  padding: 0;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  flex-shrink: 0;
-  border-radius: 4px;
 }
 
-.subtask-delete:active {
-  opacity: 1;
-  color: #dc2626;
-  background-color: rgba(220, 38, 38, 0.1);
+.dark .subtask-remove-btn {
+  color: var(--text-secondary-dark);
 }
 
-.subtask-input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 10px;
-  width: 100%;
+.subtask-remove-btn:active {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
 }
 
 .subtask-input {
   width: 100%;
-  padding: 11px 12px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  background-color: var(--card-light);
+  color: var(--text-primary-light);
   border-radius: 6px;
   font-size: 12px;
   font-family: inherit;
@@ -172,163 +146,80 @@
   transition: all 0.2s ease;
 }
 
-.subtask-input::placeholder {
-  color: var(--text-tertiary);
+.dark .subtask-input {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
 }
 
 .subtask-input:focus {
+  border-color: var(--primary);
   outline: none;
-  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.btn-add-subtask {
+.subtask-input::placeholder {
+  color: var(--text-secondary-light);
+}
+
+.dark .subtask-input::placeholder {
+  color: var(--text-secondary-dark);
+}
+
+.subtask-add-btn {
   width: 100%;
-  padding: 11px 12px;
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 2px dashed var(--primary-color);
+  padding: 10px 12px;
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  color: white;
   border-radius: 6px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
   transition: all 0.2s ease;
-  min-height: 40px;
   text-transform: uppercase;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.1px;
+  min-height: 40px;
 }
 
-.btn-add-subtask:active {
-  background-color: rgba(59, 130, 246, 0.1);
-  border-color: var(--primary-color);
+.subtask-add-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
 }
 
-/* ==================== TABLET (768px) ==================== */
+/* ==================== RESPONSIVE ==================== */
 @media (min-width: 768px) {
-  .subtasks-container {
-    margin-top: 14px;
-    padding-top: 14px;
-  }
-
-  .subtasks-header {
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .subtasks-title {
-    font-size: 13px;
-  }
-
-  .subtasks-progress {
-    width: 120px;
-  }
-
-  .subtasks-list {
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-
-  .subtask-item {
+  .subtask-item,
+  .subtask-input,
+  .subtask-add-btn {
     padding: 11px 14px;
-    gap: 10px;
+    font-size: 13px;
     min-height: 42px;
   }
 
   .subtask-text {
     font-size: 13px;
-  }
-
-  .subtask-checkbox {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    min-height: 24px;
-  }
-
-  .subtask-delete {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    min-height: 36px;
-    font-size: 15px;
-  }
-
-  .subtask-input {
-    padding: 12px 14px;
-    font-size: 13px;
-    min-height: 42px;
-  }
-
-  .btn-add-subtask {
-    padding: 12px 14px;
-    font-size: 13px;
-    min-height: 42px;
   }
 }
 
-/* ==================== DESKTOP (1024px) ==================== */
 @media (min-width: 1024px) {
-  .subtasks-container {
-    margin-top: 16px;
-    padding-top: 16px;
-  }
-
-  .subtasks-header {
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  .subtasks-title {
-    font-size: 14px;
-  }
-
-  .subtasks-progress {
-    width: 140px;
-  }
-
-  .subtasks-list {
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-
-  .subtask-item {
+  .subtask-item,
+  .subtask-input,
+  .subtask-add-btn {
     padding: 12px 16px;
-    gap: 12px;
-    min-height: 44px;
+    font-size: 13px;
   }
 
   .subtask-text {
-    font-size: 14px;
+    font-size: 13px;
   }
+}
 
-  .subtask-checkbox {
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-    min-height: 26px;
-  }
-
-  .subtask-delete {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    min-height: 38px;
-    font-size: 16px;
-  }
-
-  .subtask-input {
-    padding: 13px 16px;
-    font-size: 14px;
-    min-height: 44px;
-  }
-
-  .btn-add-subtask {
-    padding: 13px 16px;
-    font-size: 14px;
-    min-height: 44px;
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .subtask-item,
+  .subtask-input,
+  .progress-fill {
+    transition: none;
   }
 }

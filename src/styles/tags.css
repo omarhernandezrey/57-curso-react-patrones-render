@@ -1,5 +1,5 @@
 /* ============================================================ */
-/* TAGS - RESPONSIVE Y ACCESSIBLE */
+/* TAGS - MINIMALISTA */
 /* ============================================================ */
 
 .tags-container {
@@ -9,7 +9,11 @@
   width: 100%;
   margin-top: 12px;
   padding: 12px 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-light);
+}
+
+.dark .tags-container {
+  border-top-color: var(--border-dark);
 }
 
 .tags-list {
@@ -30,11 +34,12 @@
   font-size: 11px;
   font-weight: 700;
   animation: slideIn 0.2s ease;
-  background: linear-gradient(135deg, var(--primary-color), #2563eb);
+  background-color: var(--primary);
   min-height: 28px;
   text-transform: uppercase;
   letter-spacing: 0.2px;
   flex-shrink: 0;
+  border: 1px solid var(--primary);
 }
 
 @keyframes slideIn {
@@ -48,166 +53,136 @@
   }
 }
 
-.tag-remove {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-  padding: 2px;
+.tag-remove-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
-  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  padding: 0;
+  font-family: inherit;
 }
 
-.tag-remove:active {
-  opacity: 1;
-}
-
-.tag-input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
+.tag-remove-btn:active {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .tag-input {
-  width: 100%;
-  padding: 11px 12px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  background-color: var(--card-light);
+  color: var(--text-primary-light);
   border-radius: 6px;
-  font-size: 13px;
+  font-size: 12px;
   font-family: inherit;
   min-height: 40px;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
-.tag-input::placeholder {
-  color: var(--text-tertiary);
+.dark .tag-input {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
 }
 
 .tag-input:focus {
+  border-color: var(--primary);
   outline: none;
-  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.btn-add-tag,
-.btn-add-tag-trigger {
+.tag-input::placeholder {
+  color: var(--text-secondary-light);
+}
+
+.dark .tag-input::placeholder {
+  color: var(--text-secondary-dark);
+}
+
+.tag-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   width: 100%;
-  padding: 11px 12px;
+  margin-top: 8px;
+}
+
+.tag-suggestion {
+  padding: 6px 10px;
+  border: 1px solid var(--border-light);
+  background-color: var(--card-light);
+  color: var(--text-primary-light);
   border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 11px;
   cursor: pointer;
   transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  min-height: 40px;
-  text-transform: uppercase;
-  letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
-.btn-add-tag {
-  background: linear-gradient(135deg, var(--primary-color), #2563eb);
+.dark .tag-suggestion {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
+}
+
+.tag-suggestion:active {
+  background-color: var(--primary);
+  border-color: var(--primary);
   color: white;
-  border: none;
 }
 
-.btn-add-tag:active {
-  transform: scale(0.98);
-}
-
-.btn-add-tag-trigger {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 2px dashed var(--primary-color);
-}
-
-.btn-add-tag-trigger:active {
-  background-color: rgba(59, 130, 246, 0.1);
-}
-
-/* ==================== TABLET (768px) ==================== */
+/* ==================== RESPONSIVE ==================== */
 @media (min-width: 768px) {
-  .tags-container {
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-    margin-top: 14px;
-    padding: 14px 0;
-  }
-
-  .tags-list {
-    gap: 10px;
-    flex: 1;
-    flex-shrink: 0;
-  }
-
   .tag {
     padding: 7px 12px;
     font-size: 12px;
-    min-height: 32px;
-  }
-
-  .tag-input-group {
-    flex-direction: row;
-    gap: 8px;
-    flex: 1;
+    min-height: 30px;
   }
 
   .tag-input {
-    flex: 1;
-    padding: 12px 14px;
-    font-size: 14px;
+    padding: 11px 14px;
+    font-size: 13px;
     min-height: 42px;
   }
 
-  .btn-add-tag,
-  .btn-add-tag-trigger {
-    width: auto;
-    min-width: 120px;
-    padding: 12px 16px;
-    font-size: 13px;
-    min-height: 42px;
+  .tag-suggestion {
+    padding: 7px 12px;
+    font-size: 12px;
   }
 }
 
-/* ==================== DESKTOP (1024px) ==================== */
 @media (min-width: 1024px) {
-  .tags-container {
-    gap: 14px;
-    margin-top: 16px;
-    padding: 16px 0;
-  }
-
-  .tags-list {
-    gap: 12px;
-  }
-
   .tag {
     padding: 8px 14px;
-    font-size: 13px;
-    min-height: 36px;
+    font-size: 12px;
   }
 
   .tag-input {
-    padding: 13px 16px;
-    font-size: 15px;
-    min-height: 44px;
+    padding: 12px 16px;
+    font-size: 13px;
   }
 
-  .btn-add-tag,
-  .btn-add-tag-trigger {
-    min-width: 130px;
-    padding: 13px 20px;
-    font-size: 14px;
-    min-height: 44px;
+  .tag-suggestion {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .tag,
+  .tag-input,
+  .tag-suggestion,
+  .tag-remove-btn {
+    animation: none;
+    transition: none;
   }
 }

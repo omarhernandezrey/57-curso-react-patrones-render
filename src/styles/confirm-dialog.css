@@ -1,4 +1,6 @@
-/* Confirm Dialog */
+/* ============================================================ */
+/* CONFIRM DIALOG - MINIMALISTA */
+/* ============================================================ */
 
 .confirm-overlay {
   position: fixed;
@@ -25,13 +27,21 @@
 }
 
 .confirm-modal {
-  background: var(--bg-primary);
+  background: var(--card-light);
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   max-width: 400px;
   width: 90%;
   overflow: hidden;
   animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.2s ease;
+}
+
+.dark .confirm-modal {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes slideUp {
@@ -46,27 +56,55 @@
 }
 
 .confirm-header {
-  padding: 32px 24px 24px;
+  padding: 24px;
   text-align: center;
   position: relative;
-  background: linear-gradient(135deg, var(--accent-red, #ef4444) 0%, var(--accent-orange, #f97316) 100%);
+  background-color: var(--card-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.dark .confirm-header {
+  background-color: var(--card-dark);
+  border-bottom-color: var(--border-dark);
 }
 
 .confirm-header.warning {
-  background: linear-gradient(135deg, var(--accent-orange, #f97316) 0%, var(--accent-yellow, #eab308) 100%);
+  background-color: rgba(245, 158, 11, 0.05);
+}
+
+.confirm-header.danger {
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.dark .confirm-header.danger {
+  background-color: rgba(239, 68, 68, 0.1);
 }
 
 .confirm-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 48px;
+  height: 48px;
+  background-color: var(--border-light);
   border-radius: 12px;
-  color: white;
-  margin-bottom: 16px;
+  font-size: 24px;
+  margin-bottom: 12px;
   animation: bounce 0.6s ease-out;
+}
+
+.dark .confirm-icon {
+  background-color: var(--border-dark);
+}
+
+.confirm-header.danger .confirm-icon {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.confirm-header.warning .confirm-icon {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
 }
 
 @keyframes bounce {
@@ -82,21 +120,31 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(255, 255, 255, 0.2);
+  background: transparent;
   border: none;
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 6px;
+  padding: 6px;
   cursor: pointer;
-  color: white;
+  color: var(--text-secondary-light);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  font-size: 18px;
+}
+
+.dark .confirm-close {
+  color: var(--text-secondary-dark);
 }
 
 .confirm-close:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+  background-color: var(--border-light);
+  color: var(--text-primary-light);
+}
+
+.dark .confirm-close:hover {
+  background-color: var(--border-dark);
+  color: var(--text-primary-dark);
 }
 
 .confirm-content {
@@ -106,16 +154,25 @@
 
 .confirm-content h2 {
   margin: 0 0 12px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-primary-light);
+  line-height: 1.3;
+}
+
+.dark .confirm-content h2 {
+  color: var(--text-primary-dark);
 }
 
 .confirm-content p {
   margin: 0;
   font-size: 14px;
-  color: var(--text-secondary);
+  color: var(--text-secondary-light);
   line-height: 1.5;
+}
+
+.dark .confirm-content p {
+  color: var(--text-secondary-dark);
 }
 
 .confirm-buttons {
@@ -127,10 +184,11 @@
 
 .confirm-btn {
   flex: 1;
-  padding: 12px 16px;
-  border: none;
+  padding: 11px 16px;
+  border: 1px solid var(--border-light);
+  background-color: var(--card-light);
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -138,100 +196,90 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  color: var(--text-primary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+}
+
+.dark .confirm-btn {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
 }
 
 .confirm-btn.cancel {
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  background-color: var(--card-light);
+  color: var(--text-primary-light);
+  border-color: var(--border-light);
 }
 
-.confirm-btn.cancel:hover {
-  background-color: var(--bg-tertiary);
-  border-color: var(--accent-blue);
-  transform: translateY(-2px);
+.dark .confirm-btn.cancel {
+  background-color: var(--card-dark);
+  color: var(--text-primary-dark);
+  border-color: var(--border-dark);
+}
+
+.confirm-btn.cancel:active {
+  background-color: var(--border-light);
+}
+
+.dark .confirm-btn.cancel:active {
+  background-color: var(--border-dark);
 }
 
 .confirm-btn.danger {
-  background: linear-gradient(135deg, var(--accent-red, #ef4444) 0%, var(--accent-orange, #f97316) 100%);
+  background-color: #ef4444;
   color: white;
+  border-color: #ef4444;
 }
 
-.confirm-btn.danger:hover {
-  box-shadow: 0 8px 16px rgba(239, 68, 68, 0.3);
-  transform: translateY(-2px);
+.confirm-btn.danger:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 .confirm-btn.warning {
-  background: linear-gradient(135deg, var(--accent-orange, #f97316) 0%, var(--accent-yellow, #eab308) 100%);
+  background-color: #f59e0b;
   color: white;
+  border-color: #f59e0b;
 }
 
-.confirm-btn.warning:hover {
-  box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3);
-  transform: translateY(-2px);
+.confirm-btn.warning:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
-/* Responsive */
+.confirm-btn.primary {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.confirm-btn.primary:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .confirm-modal {
-    width: 92%;
-    max-width: 450px;
-  }
-
-  .confirm-header {
-    padding: 28px 22px 20px;
-  }
-
-  .confirm-icon {
-    width: 54px;
-    height: 54px;
-    margin-bottom: 14px;
-    font-size: 28px;
-  }
-
-  .confirm-content h2 {
-    font-size: 18px;
-  }
-
-  .confirm-content p {
-    font-size: 13px;
-  }
-
-  .confirm-buttons {
-    gap: 10px;
-    padding: 0 22px 22px;
-  }
-
-  .confirm-btn {
-    font-size: 13px;
-    padding: 11px 14px;
-  }
-
-  .confirm-close {
-    padding: 7px;
-  }
-}
-
-@media (max-width: 640px) {
-  .confirm-modal {
     width: 90%;
-    max-width: 420px;
+    max-width: 400px;
   }
 
   .confirm-header {
-    padding: 24px 18px 16px;
+    padding: 20px;
   }
 
   .confirm-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 12px;
-    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+    font-size: 20px;
   }
 
   .confirm-content {
-    padding: 16px 18px;
+    padding: 20px;
   }
 
   .confirm-content h2 {
@@ -240,30 +288,29 @@
   }
 
   .confirm-content p {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .confirm-buttons {
-    gap: 8px;
-    padding: 0 18px 18px;
+    gap: 10px;
+    padding: 0 20px 20px;
   }
 
   .confirm-btn {
     font-size: 12px;
-    padding: 10px 12px;
+    padding: 10px 14px;
   }
 
   .confirm-close {
     top: 10px;
     right: 10px;
-    padding: 6px;
+    padding: 5px;
   }
 }
 
 @media (max-width: 480px) {
   .confirm-overlay {
     align-items: flex-end;
-    padding: 0;
   }
 
   .confirm-modal {
@@ -273,18 +320,18 @@
   }
 
   .confirm-header {
-    padding: 20px 16px 14px;
+    padding: 16px;
   }
 
   .confirm-icon {
     width: 40px;
     height: 40px;
-    margin-bottom: 10px;
-    font-size: 20px;
+    margin-bottom: 8px;
+    font-size: 18px;
   }
 
   .confirm-content {
-    padding: 14px 16px;
+    padding: 16px;
   }
 
   .confirm-content h2 {
@@ -293,11 +340,11 @@
   }
 
   .confirm-content p {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .confirm-buttons {
-    gap: 6px;
+    gap: 8px;
     padding: 0 16px 16px;
     flex-direction: column-reverse;
   }
@@ -305,7 +352,7 @@
   .confirm-btn {
     width: 100%;
     font-size: 11px;
-    padding: 9px 10px;
+    padding: 10px 12px;
   }
 
   .confirm-close {
@@ -314,6 +361,18 @@
     width: 24px;
     height: 24px;
     padding: 4px;
-    font-size: 12px;
+    font-size: 14px;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .confirm-modal,
+  .confirm-icon {
+    animation: none;
+  }
+
+  .confirm-btn {
+    transition: none;
   }
 }

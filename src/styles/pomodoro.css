@@ -1,15 +1,21 @@
 /* ============================================================ */
-/* POMODORO - RESPONSIVE TIMER DISPLAY */
+/* POMODORO - MINIMALISTA TIMER */
 /* ============================================================ */
 
 .pomodoro-container {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(59, 130, 246, 0.01) 100%);
-  border: 1px solid var(--border-color);
+  background-color: var(--card-light);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   padding: 14px;
   margin-top: 12px;
   text-align: center;
   width: 100%;
+  transition: all 0.2s ease;
+}
+
+.dark .pomodoro-container {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
 }
 
 .pomodoro-display {
@@ -19,7 +25,7 @@
 .pomodoro-time {
   font-size: 32px;
   font-weight: 800;
-  color: var(--primary-color);
+  color: var(--primary);
   font-family: 'Courier New', 'Courier', monospace;
   margin-bottom: 6px;
   letter-spacing: 0px;
@@ -29,15 +35,24 @@
 .pomodoro-status {
   font-size: 11px;
   font-weight: 700;
-  color: var(--text-secondary);
+  color: var(--text-secondary-light);
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
 
+.dark .pomodoro-status {
+  color: var(--text-secondary-dark);
+}
+
 .pomodoro-sessions {
   font-size: 11px;
-  color: var(--text-tertiary);
+  color: var(--text-secondary-light);
   line-height: 1.2;
+  margin-top: 6px;
+}
+
+.dark .pomodoro-sessions {
+  color: var(--text-secondary-dark);
 }
 
 .pomodoro-controls {
@@ -48,127 +63,158 @@
 }
 
 .btn-control {
-  width: 100%;
-  padding: 11px 12px;
-  background: linear-gradient(135deg, var(--primary-color), #2563eb);
-  color: white;
-  border: none;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  background-color: var(--card-light);
+  color: var(--text-primary-light);
   border-radius: 6px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
   transition: all 0.2s ease;
-  min-height: 40px;
   text-transform: uppercase;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.1px;
+  min-height: 40px;
 }
 
-.btn-control:active {
+.dark .btn-control {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
+}
+
+.btn-control.primary {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.btn-control.primary:active {
   transform: scale(0.98);
   box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
 }
 
-.btn-control.running {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+.btn-control.secondary {
+  background-color: var(--card-light);
+  color: var(--text-primary-light);
+  border-color: var(--border-light);
 }
 
-.btn-control.running:active {
-  box-shadow: 0 2px 6px rgba(249, 158, 11, 0.4);
+.dark .btn-control.secondary {
+  background-color: var(--card-dark);
+  color: var(--text-primary-dark);
+  border-color: var(--border-dark);
 }
 
-.btn-control:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.btn-control.secondary:active {
+  background-color: var(--border-light);
 }
 
-.btn-control-secondary {
-  background-color: var(--bg-secondary);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-color);
+.dark .btn-control.secondary:active {
+  background-color: var(--border-dark);
 }
 
-.btn-control-secondary:active {
-  background-color: var(--border-color);
-  color: var(--text-primary);
+.pomodoro-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
 }
 
-/* ==================== TABLET (768px) ==================== */
+.dark .pomodoro-settings {
+  border-top-color: var(--border-dark);
+}
+
+.pomodoro-setting-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+.pomodoro-setting-label {
+  color: var(--text-secondary-light);
+  flex: 1;
+}
+
+.dark .pomodoro-setting-label {
+  color: var(--text-secondary-dark);
+}
+
+.pomodoro-setting-input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid var(--border-light);
+  background-color: var(--card-light);
+  color: var(--text-primary-light);
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  font-family: inherit;
+}
+
+.dark .pomodoro-setting-input {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
+}
+
+.pomodoro-setting-input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ==================== RESPONSIVE ==================== */
 @media (min-width: 768px) {
   .pomodoro-container {
     padding: 16px;
-    margin-top: 14px;
-    border-radius: 8px;
   }
 
-  .pomodoro-display {
-    margin-bottom: 14px;
+  .pomodoro-time {
+    font-size: 36px;
+  }
+
+  .btn-control {
+    padding: 11px 14px;
+    font-size: 13px;
+    min-height: 42px;
+  }
+
+  .pomodoro-setting-input {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pomodoro-container {
+    padding: 18px;
   }
 
   .pomodoro-time {
     font-size: 40px;
-    margin-bottom: 8px;
-  }
-
-  .pomodoro-status {
-    font-size: 12px;
-  }
-
-  .pomodoro-sessions {
-    font-size: 12px;
-  }
-
-  .pomodoro-controls {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
   }
 
   .btn-control {
-    flex: 0 1 calc(50% - 5px);
-    padding: 12px 14px;
+    padding: 12px 16px;
     font-size: 13px;
-    min-height: 42px;
+  }
+
+  .pomodoro-setting-input {
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }
 
-/* ==================== DESKTOP (1024px) ==================== */
-@media (min-width: 1024px) {
-  .pomodoro-container {
-    padding: 20px;
-    margin-top: 16px;
-  }
-
-  .pomodoro-display {
-    margin-bottom: 16px;
-  }
-
-  .pomodoro-time {
-    font-size: 48px;
-    margin-bottom: 10px;
-  }
-
-  .pomodoro-status {
-    font-size: 13px;
-  }
-
-  .pomodoro-sessions {
-    font-size: 13px;
-  }
-
-  .pomodoro-controls {
-    flex-direction: row;
-    gap: 12px;
-    justify-content: center;
-  }
-
-  .btn-control {
-    flex: 0 1 auto;
-    padding: 13px 20px;
-    font-size: 14px;
-    min-height: 44px;
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .pomodoro-container,
+  .btn-control,
+  .pomodoro-setting-input {
+    transition: none;
   }
 }
