@@ -1,0 +1,160 @@
+/* ============================================================ */
+/* BOTTOM NAVIGATION WITH FAB - MINIMALIST */
+/* ============================================================ */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 12px;
+  z-index: 100;
+}
+
+.dark .bottom-nav {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 12px;
+  padding: 0 8px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+.dark .nav-item {
+  color: #94a3b8;
+}
+
+.nav-item:active {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.nav-item.active {
+  color: #3b82f6;
+}
+
+.nav-item .material-symbols-rounded {
+  font-size: 20px;
+  font-variation-settings: 'FILL' 1, 'wght' 400;
+}
+
+.nav-item:not(.active) .material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 400;
+}
+
+/* ==================== FAB BUTTON ==================== */
+.fab-button {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+  transition: all 0.2s;
+  z-index: 101;
+  font-size: 26px;
+}
+
+.fab-button:active {
+  transform: translateX(-50%) scale(0.95);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.fab-button .material-symbols-rounded {
+  font-size: 28px;
+  font-variation-settings: 'FILL' 1, 'wght' 500;
+}
+
+/* ==================== TABLET (768px) ==================== */
+@media (min-width: 768px) {
+  .bottom-nav {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 64px;
+  }
+
+  .nav-item {
+    padding: 0 12px;
+  }
+
+  .nav-item .material-symbols-rounded {
+    font-size: 22px;
+  }
+
+  .fab-button {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .fab-button .material-symbols-rounded {
+    font-size: 30px;
+  }
+}
+
+/* ==================== DESKTOP (1024px) ==================== */
+@media (min-width: 1024px) {
+  .bottom-nav {
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    height: 68px;
+  }
+
+  .nav-item {
+    padding: 0 14px;
+    font-size: 11px;
+  }
+
+  .nav-item .material-symbols-rounded {
+    font-size: 24px;
+  }
+
+  .fab-button {
+    width: 64px;
+    height: 64px;
+    font-size: 30px;
+  }
+
+  .fab-button .material-symbols-rounded {
+    font-size: 32px;
+  }
+}
