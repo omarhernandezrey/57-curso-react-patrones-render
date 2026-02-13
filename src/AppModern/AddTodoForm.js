@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTodoStore } from '../store';
-import { CATEGORIES, PRIORITIES } from '../constants';
+import { CATEGORIES } from '../constants';
 import toast from 'react-hot-toast';
 import '../styles/form.css';
 
@@ -107,7 +107,7 @@ export function AddTodoForm() {
               Cancelar
             </button>
             <button type="submit" className="btn-submit">
-              <FiPlus size={16} />
+              <span className="material-symbols-rounded">add</span>
               Crear tarea
             </button>
           </div>

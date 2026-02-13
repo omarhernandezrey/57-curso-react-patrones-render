@@ -2,33 +2,58 @@
 /* DASHBOARD MINIMALISTA - STATS & ANALYTICS */
 /* ============================================================ */
 
-.dashboard-container {
+/* ==================== MAIN DASHBOARD CONTAINER ==================== */
+.dashboard {
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 100%;
+  padding: 0;
 }
 
-/* ==================== STATS GRID 2x2 ==================== */
-.stats-grid {
+.dashboard-header {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary-light);
+  margin: 0;
+}
+
+.dark .dashboard-header {
+  color: var(--text-primary-dark);
+}
+
+.dashboard-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary-light);
+}
+
+.dark .dashboard-header h2 {
+  color: var(--text-primary-dark);
+}
+
+/* ==================== STATS GRID 2x2 MOBILE / 4 TABLET ==================== */
+.dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 10px;
   width: 100%;
 }
 
 .stat-card {
-  padding: 14px 12px;
+  padding: 12px 10px;
   background-color: var(--card-light);
   border: 1px solid var(--border-light);
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  min-height: 100px;
+  min-height: 80px;
   transition: all 0.2s;
+  justify-content: flex-start;
 }
 
 .dark .stat-card {
@@ -47,19 +72,26 @@
 }
 
 .stat-icon {
-  font-size: 22px;
-  width: 28px;
-  height: 28px;
+  font-size: 20px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
 .stat-label {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   color: var(--text-secondary-light);
   line-height: 1;
 }
@@ -68,334 +100,313 @@
   color: var(--text-secondary-dark);
 }
 
-.stat-value {
-  font-size: 22px;
+.stat-number {
+  font-size: 20px;
   font-weight: 700;
   color: var(--text-primary-light);
-  line-height: 1;
-  margin-top: 2px;
+  line-height: 1.1;
 }
 
-.dark .stat-value {
+.dark .stat-number {
   color: var(--text-primary-dark);
 }
 
-/* ==================== PRODUCTIVITY PANEL ==================== */
-.productivity-panel {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 14px;
-  background-color: var(--card-light);
-  border-bottom: 1px solid var(--border-light);
-  border: 1px solid var(--border-light);
-  border-radius: 20px;
-  margin-bottom: 8px;
-}
-
-.dark .panel-header {
-  background-color: var(--card-dark);
-  border-color: var(--border-dark);
-}
-
-.panel-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
+.stat-trend {
+  font-size: 11px;
   font-weight: 600;
+  color: var(--primary);
+  margin-top: 2px;
 }
 
-.panel-title .material-symbols-rounded {
-  font-size: 18px;
-  color: var(--text-secondary-light);
-}
-
-.dark .panel-title .material-symbols-rounded {
-  color: var(--text-secondary-dark);
-}
-
-.panel-button {
+/* ==================== DASHBOARD SECTION - PRIORITY ==================== */
+.dashboard-section {
   display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 10px;
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 10px;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.dashboard-section h3 {
+  font-size: 13px;
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
+  color: var(--text-primary-light);
+  margin: 0;
+  padding: 0;
 }
 
-.panel-button:active {
-  transform: scale(0.95);
-  opacity: 0.9;
+.dark .dashboard-section h3 {
+  color: var(--text-primary-dark);
 }
 
-.panel-content {
+.priority-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   background-color: var(--card-light);
   border: 1px solid var(--border-light);
-  border-radius: 20px;
+  border-radius: 12px;
   padding: 12px;
 }
 
-.dark .panel-content {
+.dark .priority-bars {
   background-color: var(--card-dark);
   border-color: var(--border-dark);
 }
 
-.panel-row {
-  display: flex;
+.priority-bar {
+  display: grid;
+  grid-template-columns: 60px 1fr 30px;
+  gap: 8px;
   align-items: center;
-  justify-content: space-between;
+}
+
+.priority-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary-light);
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+.dark .priority-label {
+  color: var(--text-primary-dark);
+}
+
+.bar-container {
+  height: 8px;
+  background-color: var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.dark .bar-container {
+  background-color: var(--border-dark);
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.bar-value {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary-light);
+  text-align: right;
+  min-width: 30px;
+}
+
+.dark .bar-value {
+  color: var(--text-primary-dark);
+}
+
+/* ==================== DASHBOARD GRID 2 - SUBTASKS & POMODORO ==================== */
+.dashboard-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  padding: 12px 10px;
-  border-bottom: 1px solid var(--border-light);
-  cursor: pointer;
-  transition: all 0.2s;
+  width: 100%;
+  margin-top: 4px;
 }
 
-.dark .panel-row {
-  border-bottom-color: var(--border-dark);
-}
-
-.panel-row:last-child {
-  border-bottom: none;
-}
-
-.panel-row:active {
-  background-color: rgba(59, 130, 246, 0.05);
-}
-
-.dark .panel-row:active {
-  background-color: rgba(59, 130, 246, 0.1);
-}
-
-.row-left {
+.dashboard-card {
+  background-color: var(--card-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 14px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
-  flex: 1;
+  min-height: 140px;
+  justify-content: center;
 }
 
-.row-icon-box {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
+.dark .dashboard-card {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+}
+
+.dashboard-card h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary-light);
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.dark .dashboard-card h3 {
+  color: var(--text-primary-dark);
+}
+
+.progress-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  background-color: rgba(59, 130, 246, 0.1);
 }
 
-.row-icon-box.success {
-  background-color: rgba(16, 185, 129, 0.1);
+.progress-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
 }
 
-.row-icon-box.warning {
-  background-color: rgba(245, 158, 11, 0.1);
+.progress-ring-fill {
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
 }
 
-.row-icon-box.danger {
-  background-color: rgba(239, 68, 68, 0.1);
-}
-
-.row-text {
+.progress-text {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2px;
 }
 
-.row-label {
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  color: var(--text-secondary-light);
-}
-
-.dark .row-label {
-  color: var(--text-secondary-dark);
-}
-
-.row-value {
+.progress-number {
   font-size: 16px;
   font-weight: 700;
   color: var(--text-primary-light);
 }
 
-.dark .row-value {
+.dark .progress-number {
   color: var(--text-primary-dark);
 }
 
-.row-right {
-  font-size: 18px;
+.progress-label {
+  font-size: 10px;
+  font-weight: 600;
   color: var(--text-secondary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
 }
 
-.dark .row-right {
+.dark .progress-label {
   color: var(--text-secondary-dark);
 }
 
-/* ==================== PRIORITY DISTRIBUTION ==================== */
-.distribution-box {
-  background-color: var(--card-light);
-  border: 1px solid var(--border-light);
-  border-radius: 20px;
-  padding: 14px;
-  margin-bottom: 12px;
-}
-
-.dark .distribution-box {
-  background-color: var(--card-dark);
-  border-color: var(--border-dark);
-}
-
-.distribution-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.segmented-progress {
-  display: flex;
-  height: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #e5e7eb;
-  margin-bottom: 12px;
-  gap: 0;
-}
-
-.dark .segmented-progress {
-  background-color: #334155;
-}
-
-.progress-segment {
-  height: 100%;
-  flex: 0 0 auto;
-  transition: flex 0.3s;
-}
-
-.progress-segment.high {
-  background-color: #ef4444;
-}
-
-.progress-segment.medium {
-  background-color: #f59e0b;
-}
-
-.progress-segment.low {
-  background-color: #10b981;
-}
-
-.distribution-items {
+.pomodoro-time {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.distribution-item {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 4px;
 }
 
-.distribution-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-primary-light);
-}
-
-.dark .distribution-label {
-  color: var(--text-primary-dark);
-}
-
-.distribution-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.distribution-count {
-  font-size: 13px;
+.time-value {
+  font-size: 28px;
   font-weight: 700;
   color: var(--text-primary-light);
 }
 
-.dark .distribution-count {
+.dark .time-value {
   color: var(--text-primary-dark);
+}
+
+.time-unit {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.dark .time-unit {
+  color: var(--text-secondary-dark);
 }
 
 /* ==================== TABLET (768px) ==================== */
 @media (min-width: 768px) {
-  .stats-grid {
+  .dashboard-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
 
   .stat-card {
+    padding: 14px 12px;
+    min-height: 90px;
+  }
+
+  .stat-icon {
+    font-size: 22px;
+  }
+
+  .stat-number {
+    font-size: 22px;
+  }
+
+  .priority-bar {
+    grid-template-columns: 70px 1fr 35px;
+  }
+
+  .dashboard-grid-2 {
+    gap: 12px;
+  }
+
+  .dashboard-card {
+    padding: 16px;
+    min-height: 150px;
+  }
+
+  .progress-circle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .time-value {
+    font-size: 32px;
+  }
+}
+
+/* ==================== DESKTOP (1024px) ==================== */
+@media (min-width: 1024px) {
+  .dashboard {
+    gap: 16px;
+  }
+
+  .dashboard-grid {
+    gap: 12px;
+  }
+
+  .stat-card {
     padding: 16px 14px;
-    min-height: 110px;
+    min-height: 100px;
   }
 
   .stat-icon {
     font-size: 24px;
   }
 
-  .stat-label {
-    font-size: 11px;
-  }
-
-  .stat-value {
+  .stat-number {
     font-size: 24px;
   }
 
-  .panel-content {
-    padding: 14px;
-  }
-
-  .panel-row {
-    padding: 14px 12px;
-  }
-
-  .distribution-box {
-    padding: 16px;
-  }
-}
-
-/* ==================== DESKTOP (1024px) ==================== */
-@media (min-width: 1024px) {
-  .stats-grid {
+  .dashboard-section {
     gap: 12px;
   }
 
-  .stat-card {
-    padding: 18px 16px;
-    min-height: 120px;
+  .dashboard-grid-2 {
+    gap: 14px;
   }
 
-  .stat-label {
-    font-size: 12px;
+  .dashboard-card {
+    padding: 18px;
+    min-height: 160px;
   }
 
-  .stat-value {
-    font-size: 26px;
+  .progress-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .time-value {
+    font-size: 36px;
   }
 }

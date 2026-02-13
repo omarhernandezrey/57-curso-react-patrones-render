@@ -16,7 +16,6 @@ export function Sidebar() {
     clearCompleted,
     deleteAll,
     exportTodos,
-    getStats,
   } = useTodoStore();
 
   const [showClearConfirm, setShowClearConfirm] = useState(false);

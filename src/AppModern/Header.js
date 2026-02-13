@@ -9,12 +9,26 @@ export function Header({ onThemeChange }) {
   return (
     <header className="app-header">
       <div className="header-content">
-        <div className="header-left">
-          <h1 className="app-title">
-            <span className="title-icon">✓</span>
-            TaskMaster Pro
-          </h1>
-          <p className="app-subtitle">Organiza tu vida, multiplica tu productividad</p>
+        <div className="header-top">
+          <div className="header-left">
+            <h1 className="app-title">
+              <span className="title-icon">✓</span>
+              TaskMaster Pro
+            </h1>
+            <p className="app-subtitle">Organiza tu vida, multiplica tu productividad</p>
+          </div>
+
+          <button
+            className="theme-toggle"
+            onClick={onThemeChange}
+            aria-label="Cambiar tema"
+          >
+            {theme === 'light' ? (
+              <span className="material-symbols-rounded">dark_mode</span>
+            ) : (
+              <span className="material-symbols-rounded">light_mode</span>
+            )}
+          </button>
         </div>
 
         <div className="header-stats">
@@ -35,18 +49,6 @@ export function Header({ onThemeChange }) {
             <span className="stat-value">{stats.completionRate}%</span>
           </div>
         </div>
-
-        <button
-          className="theme-toggle"
-          onClick={onThemeChange}
-          aria-label="Cambiar tema"
-        >
-          {theme === 'light' ? (
-            <span className="material-symbols-rounded">dark_mode</span>
-          ) : (
-            <span className="material-symbols-rounded">light_mode</span>
-          )}
-        </button>
       </div>
     </header>
   );
