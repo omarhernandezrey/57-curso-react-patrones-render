@@ -368,37 +368,114 @@
 /* ==================== DESKTOP (1024px) ==================== */
 @media (min-width: 1024px) {
   .dashboard {
-    gap: 16px;
+    gap: 20px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 20px;
   }
 
   .dashboard-grid {
-    gap: 12px;
-  }
-
-  .stat-card {
-    padding: 16px 14px;
-    min-height: 100px;
-  }
-
-  .stat-icon {
-    font-size: 24px;
-  }
-
-  .stat-number {
-    font-size: 24px;
-  }
-
-  .dashboard-section {
-    gap: 12px;
-  }
-
-  .dashboard-grid-2 {
+    grid-template-columns: repeat(4, 1fr);
     gap: 14px;
   }
 
+  .stat-card {
+    padding: 18px 16px;
+    min-height: 110px;
+    border-radius: 14px;
+    cursor: pointer;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: rgba(59, 130, 246, 0.15);
+  }
+
+  .dark .stat-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .stat-icon {
+    font-size: 26px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .stat-number {
+    font-size: 26px;
+  }
+
+  .stat-trend {
+    font-size: 12px;
+  }
+
+  .dashboard-section {
+    gap: 14px;
+  }
+
+  .dashboard-section h3 {
+    font-size: 15px;
+  }
+
+  .priority-bars {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  .priority-bars:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .priority-bars:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .priority-bar {
+    grid-template-columns: 80px 1fr 40px;
+    gap: 12px;
+  }
+
+  .priority-label {
+    font-size: 12px;
+  }
+
+  .bar-container {
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  .bar-value {
+    font-size: 13px;
+  }
+
+  .dashboard-grid-2 {
+    gap: 16px;
+  }
+
   .dashboard-card {
-    padding: 18px;
-    min-height: 160px;
+    padding: 20px;
+    min-height: 170px;
+    border-radius: 14px;
+  }
+
+  .dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .dashboard-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .dashboard-card h3 {
+    font-size: 13px;
   }
 
   .progress-circle {
@@ -406,7 +483,60 @@
     height: 120px;
   }
 
+  .progress-number {
+    font-size: 18px;
+  }
+
   .time-value {
     font-size: 36px;
+  }
+}
+
+/* ==================== LARGE DESKTOP (1440px) ==================== */
+@media (min-width: 1440px) {
+  .dashboard {
+    gap: 24px;
+  }
+
+  .dashboard-grid {
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 20px 18px;
+    min-height: 120px;
+    border-radius: 16px;
+  }
+
+  .stat-icon {
+    font-size: 28px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .priority-bars {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .bar-container {
+    height: 12px;
+  }
+
+  .dashboard-card {
+    padding: 24px;
+    min-height: 180px;
+    border-radius: 16px;
+  }
+
+  .progress-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .time-value {
+    font-size: 40px;
   }
 }

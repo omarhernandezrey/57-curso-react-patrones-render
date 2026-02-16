@@ -1,0 +1,328 @@
+/* Profile View */
+.profile-view {
+  flex: 1;
+  padding: 8px;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Avatar Section */
+.profile-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 16px;
+  background: var(--card-light);
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+}
+
+.dark .profile-avatar-section {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-avatar .material-symbols-rounded {
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.profile-avatar-section h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary-light);
+}
+
+.dark .profile-avatar-section h2 {
+  color: var(--text-primary-dark);
+}
+
+.profile-subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary-light);
+}
+
+.dark .profile-subtitle {
+  color: var(--text-secondary-dark);
+}
+
+/* Stats Grid */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.profile-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 8px;
+  background: var(--card-light);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.dark .profile-stat-item {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+
+.profile-stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.profile-stat-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--text-secondary-light);
+}
+
+.dark .profile-stat-label {
+  color: var(--text-secondary-dark);
+}
+
+/* Profile Card */
+.profile-card {
+  background: var(--card-light);
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+}
+
+.dark .profile-card {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+
+.profile-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary-light);
+  margin: 0 0 14px 0;
+}
+
+.dark .profile-card h3 {
+  color: var(--text-primary-dark);
+}
+
+.profile-card h3 .material-symbols-rounded {
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.profile-empty {
+  font-size: 0.8rem;
+  color: var(--text-secondary-light);
+  margin: 0;
+}
+
+.dark .profile-empty {
+  color: var(--text-secondary-dark);
+}
+
+/* Category List */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary-light);
+  text-transform: capitalize;
+}
+
+.dark .category-name {
+  color: var(--text-primary-dark);
+}
+
+.category-count {
+  font-size: 0.75rem;
+  color: var(--text-secondary-light);
+  font-weight: 600;
+}
+
+.dark .category-count {
+  color: var(--text-secondary-dark);
+}
+
+.category-bar {
+  height: 6px;
+  background: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dark .category-bar {
+  background: var(--border-dark);
+}
+
+.category-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  min-width: 2px;
+}
+
+/* Achievements Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.achievement-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--bg-light);
+  transition: all 0.2s;
+}
+
+.dark .achievement-badge {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.achievement-badge.locked {
+  opacity: 0.35;
+  filter: grayscale(1);
+}
+
+.achievement-badge.unlocked .material-symbols-rounded {
+  color: #f59e0b;
+}
+
+.achievement-badge .material-symbols-rounded {
+  font-size: 1.3rem;
+  color: var(--text-secondary-light);
+}
+
+.dark .achievement-badge .material-symbols-rounded {
+  color: var(--text-secondary-dark);
+}
+
+.achievement-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-primary-light);
+}
+
+.dark .achievement-label {
+  color: var(--text-primary-dark);
+}
+
+/* Preferences */
+.preferences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preference-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-light);
+  color: var(--text-primary-light);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.dark .preference-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
+}
+
+.preference-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.preference-btn .material-symbols-rounded {
+  font-size: 1.2rem;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .profile-view {
+    padding: 16px 24px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .achievement-badge.unlocked:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .achievement-badge.unlocked:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .preference-btn:hover {
+    transform: translateX(4px);
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .profile-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}

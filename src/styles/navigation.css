@@ -133,28 +133,10 @@
 /* ==================== DESKTOP (1024px) ==================== */
 @media (min-width: 1024px) {
   .bottom-nav {
-    bottom: 24px;
-    left: 24px;
-    right: 24px;
-    height: 68px;
-  }
-
-  .nav-item {
-    padding: 0 14px;
-    font-size: 11px;
-  }
-
-  .nav-item .material-symbols-rounded {
-    font-size: 24px;
+    display: none;
   }
 
   .fab-button {
-    width: 64px;
-    height: 64px;
-    font-size: 30px;
-  }
-
-  .fab-button .material-symbols-rounded {
-    font-size: 32px;
+    display: none;
   }
 }

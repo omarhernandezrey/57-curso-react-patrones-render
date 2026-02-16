@@ -4,9 +4,21 @@ import { useTodoStore } from '../store';
 import { Header } from './Header';
 import { TodoContainer } from './TodoContainer';
 import { Sidebar } from './Sidebar';
+import { Dashboard } from './Dashboard';
+import { CalendarView } from './CalendarView';
+import { ProfileView } from './ProfileView';
 import '../styles/theme.css';
 import '../styles/modern.css';
 import '../styles/navigation.css';
+import '../styles/desktop-nav.css';
+import { Footer } from './Footer';
+
+const NAV_ITEMS = [
+  { id: 'dashboard', icon: 'dashboard', label: 'Dashboard' },
+  { id: 'tasks', icon: 'list_alt', label: 'Tareas' },
+  { id: 'calendar', icon: 'calendar_month', label: 'Calendario' },
+  { id: 'profile', icon: 'person', label: 'Perfil' },
+];
 
 function App() {
   const { theme, setTheme } = useTodoStore();
@@ -36,51 +48,83 @@ function App() {
     applyTheme(newTheme);
   };
 
+  const handleFabClick = () => {
+    setActiveNav('tasks');
+  };
+
+  const renderView = () => {
+    switch (activeNav) {
+      case 'dashboard':
+        return <Dashboard />;
+      case 'tasks':
+        return (
+          <>
+            <Sidebar />
+            <TodoContainer />
+          </>
+        );
+      case 'calendar':
+        return <CalendarView />;
+      case 'profile':
+        return <ProfileView />;
+      default:
+        return <Dashboard />;
+    }
+  };
+
   return (
     <div className="app">
       <Toaster position="bottom-right" />
       <div className="app-layout">
         <Header onThemeChange={handleThemeChange} />
+
+        {/* Desktop Navigation */}
+        <nav className="desktop-nav">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              className={`desktop-nav-item ${activeNav === item.id ? 'active' : ''}`}
+              onClick={() => setActiveNav(item.id)}
+            >
+              <span className="material-symbols-rounded">{item.icon}</span>
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
         <div className="app-content">
-          <Sidebar />
-          <TodoContainer />
+          {renderView()}
         </div>
+
+        <Footer />
       </div>
 
       {/* Bottom Navigation with FAB */}
       <nav className="bottom-nav">
-        <div 
-          className={`nav-item ${activeNav === 'dashboard' ? 'active' : ''}`}
-          onClick={() => setActiveNav('dashboard')}
-        >
-          <span className="material-symbols-rounded">dashboard</span>
-          <span>Dashboard</span>
-        </div>
-        <div 
-          className={`nav-item ${activeNav === 'tasks' ? 'active' : ''}`}
-          onClick={() => setActiveNav('tasks')}
-        >
-          <span className="material-symbols-rounded">list_alt</span>
-          <span>Tareas</span>
-        </div>
+        {NAV_ITEMS.slice(0, 2).map((item) => (
+          <div
+            key={item.id}
+            className={`nav-item ${activeNav === item.id ? 'active' : ''}`}
+            onClick={() => setActiveNav(item.id)}
+          >
+            <span className="material-symbols-rounded">{item.icon}</span>
+            <span>{item.label}</span>
+          </div>
+        ))}
         <div style={{ width: '60px' }}></div> {/* Spacer para FAB */}
-        <div 
-          className={`nav-item ${activeNav === 'calendar' ? 'active' : ''}`}
-          onClick={() => setActiveNav('calendar')}
-        >
-          <span className="material-symbols-rounded">calendar_month</span>
-          <span>Calendario</span>
-        </div>
-        <div 
-          className={`nav-item ${activeNav === 'profile' ? 'active' : ''}`}
-          onClick={() => setActiveNav('profile')}
-        >
-          <span className="material-symbols-rounded">person</span>
-          <span>Perfil</span>
-        </div>
-        
+        {NAV_ITEMS.slice(2).map((item) => (
+          <div
+            key={item.id}
+            className={`nav-item ${activeNav === item.id ? 'active' : ''}`}
+            onClick={() => setActiveNav(item.id)}
+          >
+            <span className="material-symbols-rounded">{item.icon}</span>
+            <span>{item.label}</span>
+          </div>
+        ))}
+
         {/* FAB Button */}
-        <button className="fab-button" title="Agregar tarea">
+        <button className="fab-button" title="Agregar tarea" onClick={handleFabClick}>
           <span className="material-symbols-rounded">add</span>
         </button>
       </nav>

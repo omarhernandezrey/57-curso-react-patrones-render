@@ -377,6 +377,57 @@
   }
 }
 
+/* ==================== DESKTOP (1024px) ==================== */
+@media (min-width: 1024px) {
+  .reminder-alert-modal {
+    max-width: 520px;
+    border-radius: 20px;
+  }
+
+  .reminder-alert-header {
+    padding: 24px;
+  }
+
+  .reminder-alert-header h2 {
+    font-size: 20px;
+  }
+
+  .reminder-alert-content {
+    padding: 24px;
+  }
+
+  .reminder-alert-title {
+    font-size: 18px;
+  }
+
+  .reminder-alert-category {
+    font-size: 13px;
+  }
+
+  .reminder-alert-description {
+    font-size: 14px;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .reminder-alert-controls {
+    padding: 20px 24px 24px;
+    flex-direction: row;
+  }
+
+  .sound-toggle,
+  .dismiss-btn {
+    padding: 12px 20px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .dismiss-btn:hover {
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+    transform: translateY(-1px);
+  }
+}
+
 /* ==================== ACCESSIBILITY ==================== */
 @media (prefers-reduced-motion: reduce) {
   .reminder-alert-modal,

@@ -251,27 +251,110 @@ select {
 /* ==================== DESKTOP (1024px) ==================== */
 @media (min-width: 1024px) {
   .add-todo-form {
-    padding: 18px;
-    gap: 14px;
+    padding: 20px;
+    gap: 16px;
+    border-radius: 14px;
+  }
+
+  .add-todo-form:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .add-todo-form:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   }
 
   .form-row {
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .form-group label {
+    font-size: 12px;
   }
 
   .form-group input,
   .form-group textarea,
   .form-group select {
-    padding: 13px 16px;
-    font-size: 16px;
+    padding: 12px 16px;
+    font-size: 14px;
+    min-height: 44px;
+    border-radius: 10px;
+  }
+
+  .form-group input:hover,
+  .form-group textarea:hover,
+  .form-group select:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+
+  .form-group textarea {
+    min-height: 120px;
   }
 
   .form-buttons {
+    flex-direction: row;
     gap: 12px;
+    margin-top: 4px;
   }
 
   .form-buttons button {
+    flex: 1;
     padding: 13px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .form-buttons .btn-add:hover {
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .form-buttons .btn-cancel:hover {
+    border-color: var(--text-secondary-light);
+  }
+
+  .dark .form-buttons .btn-cancel:hover {
+    border-color: var(--text-secondary-dark);
+  }
+
+  .add-todo-button {
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .add-todo-button:hover {
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+/* ==================== LARGE DESKTOP (1440px) ==================== */
+@media (min-width: 1440px) {
+  .add-todo-form {
+    padding: 24px;
+    gap: 18px;
+    border-radius: 16px;
+  }
+
+  .form-row {
+    gap: 16px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 13px 18px;
+    font-size: 15px;
+  }
+
+  .form-buttons button {
+    padding: 14px 24px;
     font-size: 15px;
   }
 }

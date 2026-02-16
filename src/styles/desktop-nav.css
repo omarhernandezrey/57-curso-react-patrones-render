@@ -1,0 +1,74 @@
+/* Desktop Navigation - Only visible at 1024px+ */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 35;
+  }
+
+  .dark .desktop-nav {
+    background: rgba(30, 30, 30, 0.7);
+    border-bottom-color: var(--border-dark);
+  }
+
+  .desktop-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .dark .desktop-nav-item {
+    color: var(--text-secondary-dark);
+  }
+
+  .desktop-nav-item .material-symbols-rounded {
+    font-size: 1.15rem;
+  }
+
+  .desktop-nav-item:hover {
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--primary);
+  }
+
+  .desktop-nav-item.active {
+    color: var(--primary);
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  .desktop-nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+  }
+}

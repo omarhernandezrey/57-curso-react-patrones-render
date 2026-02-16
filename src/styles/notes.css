@@ -184,10 +184,47 @@
   .notes-edit-btn {
     padding: 12px 16px;
     font-size: 13px;
+    border-radius: 10px;
   }
 
   .notes-textarea {
     min-height: 120px;
+  }
+
+  .notes-textarea:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+
+  .notes-view:hover {
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .dark .notes-view:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .notes-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .notes-btn.primary:hover {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .notes-btn.danger:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+
+  .notes-edit-btn:hover {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .notes-buttons {
+    flex-direction: row;
   }
 }
 

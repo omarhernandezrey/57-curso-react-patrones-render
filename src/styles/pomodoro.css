@@ -192,21 +192,60 @@
 
 @media (min-width: 1024px) {
   .pomodoro-container {
-    padding: 18px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .pomodoro-container:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .pomodoro-container:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   }
 
   .pomodoro-time {
     font-size: 40px;
   }
 
+  .pomodoro-controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+
   .btn-control {
-    padding: 12px 16px;
+    padding: 11px 20px;
     font-size: 13px;
+    min-height: 42px;
+    border-radius: 8px;
+  }
+
+  .btn-control:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-control.primary:hover {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .btn-control.secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .dark .btn-control.secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
   }
 
   .pomodoro-setting-input {
     padding: 8px 12px;
     font-size: 13px;
+    border-radius: 6px;
+  }
+
+  .pomodoro-setting-input:hover {
+    border-color: rgba(59, 130, 246, 0.3);
   }
 }
 

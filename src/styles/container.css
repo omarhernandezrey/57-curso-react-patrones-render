@@ -1,5 +1,5 @@
 /* ============================================================ */
-/* CONTENEDOR DE TAREAS - MINIMALISTA */
+/* CONTENEDOR DE TAREAS - PROFESIONAL */
 /* ============================================================ */
 
 .todo-list {
@@ -24,46 +24,142 @@
   }
 }
 
-.dashboard-toggle {
+/* ==================== HEADER DE SECCIÓN ==================== */
+.task-list-header {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 12px;
-  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
 }
 
-.toggle-btn {
-  padding: 10px 14px;
-  background-color: var(--card-light);
-  border: 1px solid var(--border-light);
-  color: var(--text-primary-light);
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
+.dark .task-list-header {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+
+.task-list-title-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.2px;
-  min-height: 40px;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-.dark .toggle-btn {
-  background-color: var(--card-dark);
-  border-color: var(--border-dark);
+.task-list-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary-light);
+  margin: 0;
+}
+
+.dark .task-list-title {
   color: var(--text-primary-dark);
 }
 
-.toggle-btn:active {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  color: white;
+.task-list-title .material-symbols-rounded {
+  font-size: 1.3rem;
+  color: var(--primary);
 }
 
-.toggle-btn-icon {
-  font-size: 12px;
+.task-count-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(59, 130, 246, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* ==================== BARRA DE PROGRESO ==================== */
+.task-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-progress-bar {
+  height: 6px;
+  background: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dark .task-progress-bar {
+  background: var(--border-dark);
+}
+
+.task-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+  min-width: 0;
+}
+
+.task-progress-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary-light);
+}
+
+.dark .task-progress-text {
+  color: var(--text-secondary-dark);
+}
+
+/* ==================== FILTROS RÁPIDOS ==================== */
+.task-quick-filters {
+  display: flex;
+  gap: 6px;
+}
+
+.quick-filter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-secondary-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.dark .quick-filter {
+  border-color: var(--border-dark);
+  color: var(--text-secondary-dark);
+}
+
+.quick-filter.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.quick-filter:not(.active):active {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-count {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+.quick-filter.active .filter-count {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 1px 5px;
+  border-radius: 10px;
 }
 
 /* ==================== TABLET (768px) ==================== */
@@ -72,31 +168,66 @@
     gap: 12px;
   }
 
-  .toggle-btn {
-    padding: 11px 16px;
-    font-size: 13px;
-    min-height: 42px;
+  .task-list-header {
+    padding: 16px 18px;
+    gap: 12px;
   }
 
-  .dashboard-toggle {
-    margin-bottom: 16px;
+  .task-list-title {
+    font-size: 1.1rem;
+  }
+
+  .quick-filter {
+    padding: 7px 14px;
+    font-size: 0.75rem;
   }
 }
 
 /* ==================== DESKTOP (1024px) ==================== */
 @media (min-width: 1024px) {
   .todo-list {
+    gap: 12px;
+  }
+
+  .task-list-header {
+    padding: 18px 22px;
+    border-radius: 16px;
+  }
+
+  .quick-filter:not(.active):hover {
+    background: rgba(59, 130, 246, 0.06);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: var(--primary);
+  }
+
+  .dark .quick-filter:not(.active):hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: var(--primary);
+  }
+
+  .task-progress-bar {
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .task-progress-fill {
+    border-radius: 4px;
+  }
+}
+
+/* ==================== LARGE DESKTOP (1440px) ==================== */
+@media (min-width: 1440px) {
+  .todo-list {
     gap: 14px;
   }
 
-  .toggle-btn {
-    padding: 12px 18px;
-    font-size: 13px;
-    min-height: 44px;
+  .task-list-header {
+    padding: 20px 24px;
   }
 
-  .dashboard-toggle {
-    margin-bottom: 20px;
+  .task-list-title {
+    font-size: 1.2rem;
   }
 }
 
@@ -106,7 +237,7 @@
     animation: none;
   }
 
-  .toggle-btn {
+  .task-progress-fill {
     transition: none;
   }
 }
